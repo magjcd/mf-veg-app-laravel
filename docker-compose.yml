@@ -1,0 +1,71 @@
+services:
+
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: mf_app_container
+        volumes:
+            - ./:/var/www
+        env_file:
+            - .env
+        depends_on:
+            mysql:
+                condition: service_healthy
+        restart: unless-stopped
+        networks:
+            - mf_network
+
+    mysql:
+        image: mysql:8.0
+        container_name: mf_mysql_container
+        volumes:
+            - mf_mysql_data:/var/lib/mysql
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+        healthcheck:
+            test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+            interval: 10s
+            timeout: 5s
+            retries: 5
+        restart: unless-stopped
+        networks:
+            - mf_network
+
+    nginx:
+        image: nginx:latest
+        container_name: mf_nginx_container
+        ports:
+            - "8000:80"
+        volumes:
+            - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+            - ./:/var/www
+        depends_on:
+            - app
+        restart: unless-stopped
+        networks:
+            - mf_network
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: mf_phpmyadmin_container
+        environment:
+            PMA_HOST: mysql
+        ports:
+            - "8080:80"
+        depends_on:
+            - mysql
+        restart: unless-stopped
+        networks:
+            - mf_network
+
+volumes:
+    mf_mysql_data:
+
+networks:
+    mf_network:
