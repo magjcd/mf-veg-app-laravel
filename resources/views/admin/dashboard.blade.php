@@ -129,29 +129,20 @@
                 <div class="chart-card">
                     <div class="chart-visual orange-chart">
                         <div class="chart-bar-group">
-                            <div class="chart-bar" style="height: 40%;"></div><span class="chart-label">J</span>
+                            <div class="chart-bar" style="height: 40%;"></div><span class="chart-label">Week 1</span>
                         </div>
                         <div class="chart-bar-group">
-                            <div class="chart-bar" style="height: 50%;"></div><span class="chart-label">F</span>
+                            <div class="chart-bar" style="height: 50%;"></div><span class="chart-label">Week 2</span>
                         </div>
                         <div class="chart-bar-group">
-                            <div class="chart-bar" style="height: 35%;"></div><span class="chart-label">M</span>
+                            <div class="chart-bar" style="height: 35%;"></div><span class="chart-label">Week 3</span>
                         </div>
                         <div class="chart-bar-group">
-                            <div class="chart-bar" style="height: 70%;"></div><span class="chart-label">A</span>
-                        </div>
-                        <div class="chart-bar-group">
-                            <div class="chart-bar" style="height: 60%;"></div><span class="chart-label">M</span>
-                        </div>
-                        <div class="chart-bar-group">
-                            <div class="chart-bar" style="height: 85%;"></div><span class="chart-label">J</span>
-                        </div>
-                        <div class="chart-bar-group">
-                            <div class="chart-bar" style="height: 45%;"></div><span class="chart-label">J</span>
+                            <div class="chart-bar" style="height: 70%;"></div><span class="chart-label">Week 4</span>
                         </div>
                     </div>
                     <div class="chart-details">
-                        <h4>Email Subscriptions</h4>
+                        <h4>Weekly Sales</h4>
                         <p>Last Campaign Performance</p>
                     </div>
                     <div class="chart-footer">🕒 campaign sent 2 days ago</div>
@@ -178,9 +169,28 @@
                         <div class="chart-bar-group">
                             <div class="chart-bar" style="height: 30%;"></div><span class="chart-label">3a</span>
                         </div>
+
+                        <div class="chart-bar-group">
+                            <div class="chart-bar" style="height: 80%;"></div><span class="chart-label">12a</span>
+                        </div>
+                        <div class="chart-bar-group">
+                            <div class="chart-bar" style="height: 50%;"></div><span class="chart-label">3p</span>
+                        </div>
+                        <div class="chart-bar-group">
+                            <div class="chart-bar" style="height: 40%;"></div><span class="chart-label">6p</span>
+                        </div>
+                        <div class="chart-bar-group">
+                            <div class="chart-bar" style="height: 35%;"></div><span class="chart-label">9p</span>
+                        </div>
+                        <div class="chart-bar-group">
+                            <div class="chart-bar" style="height: 35%;"></div><span class="chart-label">12p</span>
+                        </div>
+                        <div class="chart-bar-group">
+                            <div class="chart-bar" style="height: 30%;"></div><span class="chart-label">3a</span>
+                        </div>
                     </div>
                     <div class="chart-details">
-                        <h4>Completed Tasks</h4>
+                        <h4>Monthly Sales</h4>
                         <p>Last Campaign Performance</p>
                     </div>
                     <div class="chart-footer">🕒 campaign sent 2 days ago</div>

@@ -16,9 +16,15 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: 8.4
+        extensions: mbstring, xml, ctype, iconv, intl, bcmath, pdo_mysql
+          coverage: none
 
     - name: Install Composer Dependencies
       run: composer install --optimize-autoloader --no-interaction --prefer-dist --no-dev --no-progress
+
+    # - name: Install Composer Dependencies
+    #     run: |
+    #       composer install --no-dev --optimize-autoloader --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
     - name: Install NPM
       run: npm install
