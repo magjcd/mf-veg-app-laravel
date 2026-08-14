@@ -16,7 +16,7 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: 8.4
-        extensions: mbstring, xml, ctype, iconv, intl, bcmath, pdo_mysql
+        extensions: ctype, curl, dom, fileinfo, filter, hash, mbstring, openssl, pcre, pdo, session, tokenizer, xml, bcmath
 
     - name: Install Composer Dependencies
       run: composer install --optimize-autoloader --no-interaction --prefer-dist --no-dev --no-progress
@@ -31,7 +31,7 @@ jobs:
     - name: Install Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20'
+        node-version: '28'
 
     - name: Build Node Dependancies
       run: npm run build
