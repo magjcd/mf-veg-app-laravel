@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Ckeckout Code
+      - name: Checkout Code
         uses: actions/checkout@v3
 
       - name: Setup PHP
@@ -18,7 +18,7 @@ jobs:
           php-version: 8.4
 
       - name: Install Composer Dependencies
-        run: composer install --optimize-autoloader --no-interaction --prefer-dist --no-dev --no-progree
+        run: composer install --optimize-autoloader --no-interaction --prefer-dist --no-dev --no-progress
 
       - name: Install NodeJS Dependencies
         run: node install
@@ -42,7 +42,7 @@ jobs:
       #   run: php artisan optimize
 
       - name: FTP Deploy
-      - uses: Samskirkland/FTP-Deploy-Action@4.3.3
+      - uses: SamsKirkland/FTP-Deploy-Action@4.3.3
         with:
           server: ${{ secrets.SERVER }}
           username: ${{ secrets.USERNAME }}
