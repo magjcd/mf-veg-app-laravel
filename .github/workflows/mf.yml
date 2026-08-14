@@ -44,7 +44,7 @@ jobs:
       - name: FTP Deploy
       - uses: Samskirkland/FTP-Deploy-Action@4.3.3
         with:
-          server: ${{ secret.SERVER }}
-          username: ${{ secret:USERNAME }}
-          password: ${{ secret.PASSWORD }}
+          server: ${{ secrets.SERVER }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
           server_dir: public_html/mf.talrejaconsultant.com/
