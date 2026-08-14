@@ -17,7 +17,6 @@ jobs:
       with:
         php-version: 8.4
         extensions: mbstring, xml, ctype, iconv, intl, bcmath, pdo_mysql
-          coverage: none
 
     - name: Install Composer Dependencies
       run: composer install --optimize-autoloader --no-interaction --prefer-dist --no-dev --no-progress
