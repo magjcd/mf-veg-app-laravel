@@ -1,4 +1,4 @@
-name: mf-vagetable-application
+name: MF Vagetable Application
 
 on:
   push:
@@ -19,6 +19,9 @@ jobs:
 
     - name: Install Composer Dependencies
       run: composer install --optimize-autoloader --no-interaction --prefer-dist --no-dev --no-progress
+
+    - name: Install NPM
+      run: npm install
 
     - name: Install Node.js
       uses: actions/setup-node@v3
@@ -43,8 +46,8 @@ jobs:
     # - name: Run Optimize
     #   run: php artisan optimize
 
-    - name: FTP Deploy
-    - uses: SamsKirkland/FTP-Deploy-Action@4.3.3
+    - name: Deploying Code
+      uses: samKirkland/FTP-Deploy-Action@4.3.3
       with:
         server: ${{ secrets.SERVER }}
         username: ${{ secrets.USERNAME }}
