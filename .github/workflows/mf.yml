@@ -9,42 +9,44 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+    - name: Checkout Code
+      uses: actions/checkout@v3
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 8.4
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: 8.4
 
-      - name: Install Composer Dependencies
-        run: composer install --optimize-autoloader --no-interaction --prefer-dist --no-dev --no-progress
+    - name: Install Composer Dependencies
+      run: composer install --optimize-autoloader --no-interaction --prefer-dist --no-dev --no-progress
 
-      - name: Install NodeJS Dependencies
-        run: node install
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
 
-      - name: Build Node Dependancies
-        run: npm run build
+    - name: Build Node Dependancies
+      run: npm run build
 
-      # - name: Config Cache
-      #   run: php artisa config:cache
+    # - name: Config Cache
+    #   run: php artisa config:cache
 
-      # - name: Config Cache Remove
-      #   run: php artisan config:clear
+    # - name: Config Cache Remove
+    #   run: php artisan config:clear
 
-      # - name: Composer Autoload Dump
-      #   run: composer dump-autoload
+    # - name: Composer Autoload Dump
+    #   run: composer dump-autoload
 
-      # - name: Run Force Migration
-      #   run: php artisan migrate --force
+    # - name: Run Force Migration
+    #   run: php artisan migrate --force
 
-      # - name: Run Optimize
-      #   run: php artisan optimize
+    # - name: Run Optimize
+    #   run: php artisan optimize
 
-      - name: FTP Deploy
-      - uses: SamsKirkland/FTP-Deploy-Action@4.3.3
-        with:
-          server: ${{ secrets.SERVER }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          server_dir: public_html/mf.talrejaconsultant.com/
+    - name: FTP Deploy
+    - uses: SamsKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        server: ${{ secrets.SERVER }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        server_dir: public_html/mf.talrejaconsultant.com/
