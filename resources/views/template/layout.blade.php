@@ -624,7 +624,7 @@
         @section('sidebar')
             <!-- Sidebar Navigation Menu -->
             <aside class="sidebar" id="sidebar">
-                <div class="sidebar-brand">Creative Tim</div>
+                <div class="sidebar-brand">ایم-ایف کمیشن شاپ</div>
                 <ul class="sidebar-menu">
                     <li class="active"><a href="{{ route('dashboard') }}">📊 Dashboard</a></li>
                     <li><a href="{{ route('users') }}">👤 User Profile</a></li>
